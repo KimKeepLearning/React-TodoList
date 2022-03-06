@@ -1,10 +1,7 @@
 import React,{ Component } from 'react'
-import { Route } from 'react-router-dom'
-
-import Home from './pages/Home'
-import About from './pages/About' // 路由组件
-import Header from './components/Header' // 一般组件
-import MyNavLink from './components/MyNavLink'
+import Home from './components/Home'
+import About from './components/About'
+import { Link,Route } from 'react-router-dom'
 
 
 export default class App extends Component {
@@ -20,9 +17,7 @@ export default class App extends Component {
         <div>
           <div className="row">
             <div className="col-xs-offset-2 col-xs-8">
-              <div className="page-header">
-                <Header />
-              </div>
+              <div className="page-header"><h2>React Router Demo</h2></div>
             </div>
           </div>
           <div className="row">
@@ -33,11 +28,9 @@ export default class App extends Component {
                 <a className="list-group-item active" href="./home.html">Home</a> */}
 
                 {/* React路由链接---------第一步：监测路由的变化*/}
-                {/* <NavLink activeClassName="atguigu" className="list-group-item" to="/about">About</NavLink>
-                <NavLink activeClassName="atguigu" className="list-group-item" to="/home">Home</NavLink> */}
 
-                <MyNavLink to="/about">About</MyNavLink>
-                <MyNavLink to="/home">Home</MyNavLink>
+                <Link className="list-group-item" to="/about">About</Link>
+                <Link className="list-group-item" to="/home">Home</Link>
 
               </div>
             </div>
@@ -54,6 +47,7 @@ export default class App extends Component {
             </div>
           </div>
         </div>
+
       </div>
     )
   }

@@ -1,10 +1,10 @@
 import React,{ Component } from 'react'
-import { Route } from 'react-router-dom'
+import { NavLink,Route } from 'react-router-dom'
 
 import Home from './pages/Home'
 import About from './pages/About' // 路由组件
 import Header from './components/Header' // 一般组件
-import MyNavLink from './components/MyNavLink'
+
 
 
 export default class App extends Component {
@@ -33,11 +33,9 @@ export default class App extends Component {
                 <a className="list-group-item active" href="./home.html">Home</a> */}
 
                 {/* React路由链接---------第一步：监测路由的变化*/}
-                {/* <NavLink activeClassName="atguigu" className="list-group-item" to="/about">About</NavLink>
-                <NavLink activeClassName="atguigu" className="list-group-item" to="/home">Home</NavLink> */}
 
-                <MyNavLink to="/about">About</MyNavLink>
-                <MyNavLink to="/home">Home</MyNavLink>
+                <NavLink activeClassName="atguigu" className="list-group-item" to="/about">About</NavLink>
+                <NavLink activeClassName="atguigu" className="list-group-item" to="/home">Home</NavLink>
 
               </div>
             </div>
@@ -54,6 +52,7 @@ export default class App extends Component {
             </div>
           </div>
         </div>
+
       </div>
     )
   }
