@@ -48,3 +48,43 @@
             path: "/about"
             url: "/about"
     '''
+
+## NavLink和封装NavLink
+
+    1. NavLink可以实现路由链接的高亮，通过activeClassName
+    2. 标签体内容是一个特殊的标签属性（children）
+    3. 通过this.props.children可以获取标签体内容
+
+## Switch的基本使用
+
+    1. 通常情况下，path和component是一一对应的关系
+    2. Switch可以提高路由匹配效率（单一匹配）
+
+## 解决多级路径刷新页面时，样式丢失的问题
+
+    1. public/index.html 中引入样式时不写./ 写/ (常用)
+    2. public/index.html 中引入样式时不写./ 写%PUBLIC_URL% (常用)
+    3. 使用HashRouter
+
+## 路由的严格匹配与模糊匹配
+
+    1. 默认使用的时模糊匹配，【输入的路径】必须包含要【匹配的路径】，且顺序要一致
+    2. 开启严格匹配：<Route exact={true} path='/xxx' component={xxx} />
+    3. 严格匹配不要随便开启，需要再开，否则会导致无法继续匹配二级路由
+
+## Redirect的使用
+
+    1. 一般写在所有路由注册的最下方，当所有路由都无法匹配时，跳转到redirect指定的路由
+    2. 具体使用方法：
+        '''js
+            <Switch>
+                <Route path='/about' component={About}>
+                <Route path='/home' component={Home}>
+                <Redirect to="/about">
+            </Switch>
+        '''
+
+## 嵌套路由
+
+    1. 注册子路由的时候要写上父路由的path值
+    2. 路由的匹配时按照注册路由的顺序进行的

@@ -1,6 +1,7 @@
 import React,{ Component } from 'react'
-import { Route,Switch,Redirect } from 'react-router-dom'
+import { Route,Switch } from 'react-router-dom'
 
+import Test from './pages/Test'
 import Home from './pages/Home'
 import About from './pages/About' // 路由组件
 import Header from './components/Header' // 一般组件
@@ -48,8 +49,7 @@ export default class App extends Component {
                   <Switch>
                     <Route path="/about" component={About} />
                     <Route path="/home" component={Home} />
-                    {/* 兜底的人 */}
-                    <Redirect to="/about" />
+                    <Route path="/home" component={Test} />
                   </Switch>
 
                 </div>

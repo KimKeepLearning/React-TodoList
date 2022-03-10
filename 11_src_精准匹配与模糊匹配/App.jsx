@@ -1,5 +1,5 @@
 import React,{ Component } from 'react'
-import { Route,Switch,Redirect } from 'react-router-dom'
+import { Route,Switch } from 'react-router-dom'
 
 import Home from './pages/Home'
 import About from './pages/About' // 路由组件
@@ -46,10 +46,8 @@ export default class App extends Component {
                 <div className="panel-body">
                   {/* 注册路由----第二步： 设置路由键值对（key,value），使路由变化时显示对应的组件*/}
                   <Switch>
-                    <Route path="/about" component={About} />
-                    <Route path="/home" component={Home} />
-                    {/* 兜底的人 */}
-                    <Redirect to="/about" />
+                    <Route exact path="/about" component={About} />
+                    <Route exact path="/home" component={Home} />
                   </Switch>
 
                 </div>
